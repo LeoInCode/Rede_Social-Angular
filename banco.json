@@ -1,0 +1,48 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "nick": "LeoM553",
+            "nome": "Leonardo",
+            "email": "leo@leo.com",
+            "senha": "12345",
+            "urlfoto": "http",      
+            "contatos": ["Kaue","Eduardo"],
+            "chat": [
+                {
+                    "Kaue": [
+                        {
+                            "nick": "LeoM553",
+                            "mensagem": "Oi"
+                        },
+                        {
+                            "nick": "Kaue",
+                            "mensagem": "E aí"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+
+    "jogos": [
+        {
+            "id": 1,
+            "nickjogo": "COD",
+            "urlperfil": "http",
+            "urlcapa": "http"
+            
+        }
+    ],
+
+    "feed": [
+        {
+            "id": 1,
+            "nick": "LeoM553",
+            "nome": "Leonardo",
+            "mensagem": "Qualquer coisa",
+            "urlfoto": "http",
+            "nickjogo": "COD"
+        }
+    ]
+}

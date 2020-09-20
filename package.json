@@ -1,0 +1,22 @@
+{
+  "name": "rede_social-angular",
+  "version": "1.0.0",
+  "description": "Criando uma rede social com Angular",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --watch banco.json --port 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeoInCode/Rede_Social-Angular.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeoInCode/Rede_Social-Angular/issues"
+  },
+  "homepage": "https://github.com/LeoInCode/Rede_Social-Angular#readme",
+  "dependencies": {
+    "json-server": "^0.16.1"
+  }
+}
