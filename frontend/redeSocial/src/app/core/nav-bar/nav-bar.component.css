@@ -1,0 +1,24 @@
+/* Nav-bar */
+.navbar-collor {
+    background: linear-gradient(90deg, #812560 0%, #812560 54.17%, #12050D 100%);
+}
+
+.rounded-search {
+    border-radius: 20px;
+}
+
+/* Nav */
+.nav-collor {
+    background-color: white;
+}
+
+/* Remover */
+.cor {
+    color:  white;
+}
+
+.background-collor {
+    height: 100vh;
+    background-color: #E8E6E6;
+    background-size: cover;
+}

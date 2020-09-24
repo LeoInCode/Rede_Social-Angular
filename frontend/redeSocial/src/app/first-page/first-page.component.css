@@ -2,4 +2,5 @@
     background: linear-gradient(90deg, #C33865 0%, #1E2670 100.04%);
     height: 100vh;
     width: 100%;
+    background-size: cover;
 }
