@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
+  fotos = ['../../../assets/Foto.jpg',"../../../assets/Foto.jpg",
+  "../../../assets/Foto.jpg","../../../assets/Foto.jpg"];
+
   constructor() { }
 
   ngOnInit(): void {
