@@ -16,14 +16,14 @@ export class CadastroComponent implements OnInit {
     this.formulario = this.formBuilder.group({
       nick: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(35)]],
       nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(35)]],
-      senha: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(12)]],
-      email: [null, [Validators.required, Validators.email],]
+      email: [null, [Validators.required, Validators.email],],
+      senha: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(12)]]
     });
     
   }
   
   onSubmit(){
-    console.log(this.formulario);
+    console.log(this.formulario.value);
   }
 
 }

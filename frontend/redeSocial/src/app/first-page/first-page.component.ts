@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-first-page',
@@ -7,9 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstPageComponent implements OnInit {
 
+  cadastro: boolean = false;
+  login: boolean = true;
+  @Input() cadastroCor: string = "secondary";
+  @Input() loginCor: string = "info";
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  loginEstado(){
+    this.cadastro = false;
+    this.login = true;
+    this.cadastroCor = "secondary";
+    this.loginCor = "info";
+  }
+
+  cadastroEstado(){
+    this.cadastro = true;
+    this.login = false;
+    this.cadastroCor = "info";
+    this.loginCor = "secondary";
+  }
 }

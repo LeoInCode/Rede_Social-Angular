@@ -1,3 +1,4 @@
+import { CadastroComponent } from './first-page/cadastro/cadastro.component';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { LoginComponent } from './first-page/login/login.component';
 import { NgModule } from '@angular/core';
