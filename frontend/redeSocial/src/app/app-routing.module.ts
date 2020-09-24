@@ -1,11 +1,16 @@
-import { LoginComponent } from './firstPage/login/login.component';
-import { NgModule, Component } from '@angular/core';
+import { FirstPageComponent } from './first-page/first-page.component';
+import { LoginComponent } from './first-page/login/login.component';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'login', component: LoginComponent
-  }
+    path: '', component: FirstPageComponent
+  },
+  {
+    path: 'first-page', component: FirstPageComponent,   
+  },
+
 ];
 
 @NgModule({
