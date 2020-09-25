@@ -1,0 +1,21 @@
+/* Barra de pesquisa */
+.search-collor {
+    background: linear-gradient(90deg, #812560 0%, #812560 54.17%, #12050D 100%);
+    color: white;
+}
+/* Cores do placeholder do pesquisar */
+.search-collor::-webkit-input-placeholder {
+    color: white;
+ }
+ 
+ .search-collor:-moz-placeholder { /* Firefox 18- */
+    color: white;  
+ }
+ 
+ .search-collor::-moz-placeholder {  /* Firefox 19+ */
+    color: white;  
+ }
+ 
+ .search-collor:-ms-input-placeholder {  
+    color: white;  
+ }
