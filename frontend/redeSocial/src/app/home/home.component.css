@@ -1,0 +1,13 @@
+/* Cor de fundo */
+.background-collor {
+    background-color: #E8E6E6;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+}
+
+/* Cor da quadrado das publicações */
+.publicar-collor {
+    background: linear-gradient(90deg, #C33865 0%, #1E2670 100.04%);
+    background-size: cover;
+}
