@@ -1,0 +1,10 @@
+/* Header do feed */
+.header-collor {
+    background: linear-gradient(90deg, #C33865 0%, #1E2670 100.04%);
+    background-size: cover;
+}
+
+/* Remover */
+.corNome {
+    color: white;
+}

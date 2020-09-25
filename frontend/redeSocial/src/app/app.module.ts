@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
+import { FeedComponent } from './core/feed/feed.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     HomeComponent,
+    FeedComponent,
   ],
   imports: [
     BrowserModule,

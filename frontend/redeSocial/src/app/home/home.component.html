@@ -1,15 +1,15 @@
 <div class="container-fluid p-0 m-0 background-collor">
     <app-nav-bar></app-nav-bar>
 
-    <div class="container publicar-collor col-lg-5">
+    <div class="container publicar-collor col-lg-5 col-md-8 col-sm-10 shadow-lg">
         <div class="row mt-5 mb-5">
             <div class="col-md-2 col-lg-2 col-sm-2 col-2">
-                <div class="row ml-4 mt-3" style="width: 5rem;">
-                    <img src="../../../assets/Foto.jpg" class="card-img-top rounded-circle w-75" alt="Foto do usuário">
+                <div class="row ml-4 mt-3" style="width: 4rem;">
+                    <img src="../../../assets/Foto.jpg" class="card-img-top rounded-circle" alt="Foto do usuário">
                 </div>
             </div>
             <div class="col-md-10 col-lg-10 col-sm-10 col-10 mt-2">
-                <select class="custom-select mr-sm-3 col-md-3 col-lg-3 col-3 ml-3" id="inlineFormCustomSelect">
+                <select class="custom-select mr-sm-3 col-md-3 col-lg-3 col-3 ml-3 mb-1" id="inlineFormCustomSelect">
                     <option selected>Escolher...</option>
                 </select>
                 <form>
@@ -17,9 +17,7 @@
                         <div class="col-md-12">
                             <textarea type="text" class="form-control" id="nome" rows="4" placeholder="Digite algo.."></textarea>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-12">
+                        <div class="col-md-12 mt-1">
                             <input type="text" class="form-control" id="urlfoto" placeholder="Insira um link de foto">
                         </div>
                     </div>
@@ -32,4 +30,7 @@
             </div>
         </div>
     </div>
+    <div class="container col-lg-5 col-md-8">
+        <app-feed></app-feed>
+    </div>   
 </div>
