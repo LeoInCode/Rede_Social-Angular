@@ -8,3 +8,8 @@
 .corNome {
     color: white;
 }
+
+/* Campo de comentário */
+.rounded-search {
+    border-radius: 20px;
+}
