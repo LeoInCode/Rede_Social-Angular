@@ -1,0 +1,13 @@
+/* Cor de fundo */
+.background-collor {
+    background-color: #E8E6E6;
+    height: 180vh;
+    width: 100%;
+    background-size: cover;
+}
+
+.background-image {
+    background-image: url('../../assets/lords.jpg');
+    height: 70vh;
+    background-size: cover;
+}

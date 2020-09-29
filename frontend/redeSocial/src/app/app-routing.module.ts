@@ -1,3 +1,4 @@
+import { JogoComponent } from './jogo/jogo.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
@@ -9,7 +10,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '', component: PerfilComponent
+    path: '', component: JogoComponent
   },
   {
     path: 'perfil', component: PerfilComponent,   
