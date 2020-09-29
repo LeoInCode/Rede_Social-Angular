@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { FeedComponent } from './core/feed/feed.component';
 import { ContatosComponent } from './core/contatos/contatos.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { JogoComponent } from './jogo/jogo.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PerfilComponent } from './perfil/perfil.component';
     FeedComponent,
     ContatosComponent,
     PerfilComponent,
+    JogoComponent,
   ],
   imports: [
     BrowserModule,
