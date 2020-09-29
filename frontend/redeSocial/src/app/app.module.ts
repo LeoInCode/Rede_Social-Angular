@@ -9,6 +9,7 @@ import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { FeedComponent } from './core/feed/feed.component';
 import { ContatosComponent } from './core/contatos/contatos.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ContatosComponent } from './core/contatos/contatos.component';
     HomeComponent,
     FeedComponent,
     ContatosComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,

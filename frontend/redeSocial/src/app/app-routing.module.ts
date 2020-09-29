@@ -1,3 +1,4 @@
+import { PerfilComponent } from './perfil/perfil.component';
 import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { CadastroComponent } from './first-page/cadastro/cadastro.component';
@@ -8,10 +9,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '', component: HomeComponent
+    path: '', component: PerfilComponent
   },
   {
-    path: 'home', component: HomeComponent,   
+    path: 'perfil', component: PerfilComponent,   
   },
 
 ];
