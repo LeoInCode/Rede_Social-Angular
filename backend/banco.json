@@ -6,7 +6,8 @@
             "nome": "Leonardo",
             "email": "leo@leo.com",
             "senha": "12345",
-            "urlfoto": "http",      
+            "urlfoto": "http",
+            "urlbackground": "http",
             "contatos": ["Kaue","Eduardo"],
             "chat": [
                 {
