@@ -1,3 +1,4 @@
+import { CoreModule } from './core/core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirstPageModule } from './first-page/first-page.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,10 +16,7 @@ import { JogoComponent } from './jogo/jogo.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent,
     HomeComponent,
-    FeedComponent,
-    ContatosComponent,
     PerfilComponent,
     JogoComponent,
   ],
@@ -26,7 +24,9 @@ import { JogoComponent } from './jogo/jogo.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    CoreModule,
     FirstPageModule,
+    HomeComponent,
     AppRoutingModule
   ],
   providers: [],
