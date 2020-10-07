@@ -38,7 +38,10 @@
     <div class="form-group">
         <div class="col-md-12 text-right rounded">
             <span class="d-flex justify-content-start text-left text-danger">{{ mensagem }}</span>
-            <button type="submit" class="mt-2 btn btn-info btn-lg">Cadastrar-se</button>
+            <button type="submit" class="mt-2 btn btn-info btn-lg">
+                 <fa-icon *ngIf="iconViewer"  size="lg" [icon]="faSpinner" [spin]="true"></fa-icon>
+                 Cadastrar-se
+            </button>
         </div>
     </div>
 </form>

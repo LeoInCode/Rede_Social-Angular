@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import { UsuariosService } from './../../shared/services/usuarios/usuarios.service';
 
@@ -12,6 +13,8 @@ export class CadastroComponent implements OnInit {
 
   formulario: FormGroup;
   mensagem: string
+  faSpinner = faSpinner
+  iconViewer = false;
 
   constructor(private formBuilder: FormBuilder, private userService: UsuariosService) { }
 
@@ -38,6 +41,7 @@ export class CadastroComponent implements OnInit {
   onSubmit(){
     console.log(this.formulario);
     if(this.formulario.valid){
+      this.iconViewer = true;
       this.userService.postUser(this.formulario.value).subscribe(data => {
         console.log(data)
         //location.assign('')
@@ -48,5 +52,4 @@ export class CadastroComponent implements OnInit {
       this.mensagem = "Preencha os campos corretamente"
     }
   }
-
 }
