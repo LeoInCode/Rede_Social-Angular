@@ -16,6 +16,6 @@ import { LoginComponent } from './login/login.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule
-  ],
+  ]
 })
 export class FirstPageModule { }

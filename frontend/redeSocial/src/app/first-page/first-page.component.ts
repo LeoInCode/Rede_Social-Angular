@@ -7,8 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FirstPageComponent implements OnInit {
 
-  cadastro: boolean = false;
-  login: boolean = true;
+  cadastro: boolean = true;
+  login: boolean = false;
   @Input() cadastroCor: string = "secondary";
   @Input() loginCor: string = "info";
 

@@ -4,7 +4,6 @@ export class Usuario {
     public nome: string
     public email: string
     public senha: string
-    public urlfoto: string
-    public contatos: []
-    public chat: []
+    public urlfoto?: string
+    public urlbackground?: string
 }
