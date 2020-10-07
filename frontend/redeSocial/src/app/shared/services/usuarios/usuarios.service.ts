@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Usuario } from '../../../model/Usuario';
-import { take } from 'rxjs/operators';
+import { delay, map, reduce, take, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,12 @@ export class UsuariosService {
   constructor(private http: HttpClient) { }
 
   getUser(user: Usuario) {
-    return this.http.get('http://localhost:3000/usuarios' + user.id).pipe(take(1))
+    return this.http.get('http://localhost:3000/usuarios')
+    .pipe(
+      map((usuario: Usuario[]) => usuario.filter(v => v.email === user.email)),
+      map((usuario: Usuario[]) => usuario.find(v => v.senha === user.senha)),
+      take(1)
+    );
   }
 
   postUser(user: Usuario) {

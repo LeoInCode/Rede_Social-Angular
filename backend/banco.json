@@ -1,49 +1,56 @@
 {
-    "usuarios": [
+  "usuarios": [
+    {
+      "id": 1,
+      "nick": "LeoM553",
+      "nome": "Leonardo",
+      "email": "leo@leo.com",
+      "senha": "12345",
+      "urlfoto": "http",
+      "urlbackground": "http",
+      "contatos": [
+        "Kaue",
+        "Eduardo"
+      ],
+      "chat": [
         {
-            "id": 1,
-            "nick": "LeoM553",
-            "nome": "Leonardo",
-            "email": "leo@leo.com",
-            "senha": "12345",
-            "urlfoto": "http",
-            "urlbackground": "http",
-            "contatos": ["Kaue","Eduardo"],
-            "chat": [
-                {
-                    "Kaue": [
-                        {
-                            "nick": "LeoM553",
-                            "mensagem": "Oi"
-                        },
-                        {
-                            "nick": "Kaue",
-                            "mensagem": "E aí"
-                        }
-                    ]
-                }
-            ]
+          "Kaue": [
+            {
+              "nick": "LeoM553",
+              "mensagem": "Oi"
+            },
+            {
+              "nick": "Kaue",
+              "mensagem": "E aí"
+            }
+          ]
         }
-    ],
-
-    "jogos": [
-        {
-            "id": 1,
-            "nickjogo": "COD",
-            "urlperfil": "http",
-            "urlcapa": "http"
-            
-        }
-    ],
-
-    "feed": [
-        {
-            "id": 1,
-            "nick": "LeoM553",
-            "nome": "Leonardo",
-            "mensagem": "Qualquer coisa",
-            "urlfoto": "http",
-            "nickjogo": "COD"
-        }
-    ]
+      ]
+    },
+    {
+      "nick": "leo",
+      "nome": "Leonardo Souza Mendes",
+      "email": "leo-mendes-souza@hotmail.com",
+      "senha": "454456",
+      "id": 2
+    }
+  ],
+  "jogos": [
+    {
+      "id": 1,
+      "nickjogo": "COD",
+      "urlperfil": "http",
+      "urlcapa": "http"
+    }
+  ],
+  "feed": [
+    {
+      "id": 1,
+      "nick": "LeoM553",
+      "nome": "Leonardo",
+      "mensagem": "Qualquer coisa",
+      "urlfoto": "http",
+      "nickjogo": "COD"
+    }
+  ]
 }
