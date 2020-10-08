@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import { UsuariosService } from './../../shared/services/usuarios/usuarios.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,10 @@ export class LoginComponent implements OnInit {
   faSpinner = faSpinner
   iconViewer = false;
 
-  constructor(private formBuilder: FormBuilder, private userService: UsuariosService) { }
+  constructor(
+    private formBuilder: FormBuilder, 
+    private userService: UsuariosService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
@@ -36,17 +40,16 @@ export class LoginComponent implements OnInit {
   }
 
   logar(){
-    console.log(this.formulario);
-    this.iconViewer = true;
     if(this.formulario.valid){
-      this.userService.getUser(this.formulario.value).subscribe(data => {
+      this.iconViewer = true;
+      this.userService.verificaUsuario(this.formulario.value).subscribe(data => {
         if(data == null){
           console.log("null");
           this.mensagem = "Email ou Senha incorretos"
           this.iconViewer = false;
         }else{
           console.log(data);
-          //this.router.navigate(['/']);
+          this.router.navigate(['home', data.id]);
         }
       },
       (error: any) => {
@@ -55,7 +58,6 @@ export class LoginComponent implements OnInit {
       });
     }else{
       this.mensagem = "Preencha os campos corretamente"
-      this.iconViewer = false;
     }
   }
 

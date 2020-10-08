@@ -13,7 +13,13 @@ const routes: Routes = [
     path: '', component: FirstPageComponent
   },
   {
-    path: 'home', component: HomeComponent,   
+    path: 'home/:id', component: HomeComponent,   
+  },
+  {
+    path: 'jogo', component: JogoComponent,   
+  },
+  {
+    path: 'perfil', component: PerfilComponent,   
   },
 
 ];

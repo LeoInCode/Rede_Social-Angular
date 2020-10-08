@@ -11,13 +11,17 @@ export class UsuariosService {
 
   constructor(private http: HttpClient) { }
 
-  getUser(user: Usuario) {
+  verificaUsuario(user: Usuario) {
     return this.http.get('http://localhost:3000/usuarios')
     .pipe(
       map((usuario: Usuario[]) => usuario.filter(v => v.email === user.email)),
       map((usuario: Usuario[]) => usuario.find(v => v.senha === user.senha)),
       take(1)
     );
+  }
+
+  getUsuario(id: number) {
+    return this.http.get('http://localhost:3000/usuarios/' + id);
   }
 
   postUser(user: Usuario) {
@@ -32,4 +36,12 @@ export class UsuariosService {
     return this.http.delete('http://localhost:3000/usuarios/' + id).pipe(take(1))
   }
 
+  verificarEmail(email: string) {
+    return this.http.get('http://localhost:3000/usuarios')
+    .pipe(
+      map((usuario: Usuario[]) => usuario.filter(v => v.email === email)),
+      map((usuario: any[]) => usuario.length > 0),
+      take(1)
+    );
+  }
 }

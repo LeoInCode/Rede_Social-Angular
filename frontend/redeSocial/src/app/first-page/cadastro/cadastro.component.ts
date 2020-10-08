@@ -1,6 +1,8 @@
+import { Usuario } from './../../model/Usuario';
+import { map, tap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { faFileMedical, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import { UsuariosService } from './../../shared/services/usuarios/usuarios.service';
 
@@ -15,6 +17,7 @@ export class CadastroComponent implements OnInit {
   mensagem: string
   faSpinner = faSpinner
   iconViewer = false;
+  user: Usuario;
 
   constructor(private formBuilder: FormBuilder, private userService: UsuariosService) { }
 
@@ -22,8 +25,8 @@ export class CadastroComponent implements OnInit {
     this.formulario = this.formBuilder.group({
       nick: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(35)]],
       nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(35)]],
-      email: [null, [Validators.required, Validators.email, Validators.maxLength(40)],],
-      senha: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(12)]]
+      email: [null, [Validators.required, Validators.email, Validators.maxLength(40)], [this.validarEmail.bind(this)]],
+      senha: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(12)]],
     });
     
   }
@@ -38,16 +41,31 @@ export class CadastroComponent implements OnInit {
     }
   }
   
+  validarEmail(formControl: FormControl) {
+    return this.userService.verificarEmail(formControl.value)
+      .pipe(map(emailExiste => emailExiste ? { emailInvalido: true } : null));
+  }
+  
+  completaDados(){
+    this.formulario.patchValue({
+      urlfoto: this.user.urlfoto,
+      urlbrackground: this.user.urlbackground
+    })
+  }
+
   onSubmit(){
     console.log(this.formulario);
     if(this.formulario.valid){
       this.iconViewer = true;
+      this.completaDados()
       this.userService.postUser(this.formulario.value).subscribe(data => {
         console.log(data)
         //location.assign('')
       },
-      (error: any) => this.mensagem = "Verifique sua conexão e tente novamente mais tarde",
-      );
+      (error: any) => {
+        this.mensagem = "Verifique sua conexão e tente novamente mais tarde";
+        this.iconViewer = false;
+      });
     }else{
       this.mensagem = "Preencha os campos corretamente"
     }
