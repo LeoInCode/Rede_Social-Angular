@@ -9,10 +9,12 @@ import { delay, map, take } from 'rxjs/operators';
 })
 export class UsuariosService {
 
+  URL: string = 'http://localhost:3000/usuarios';
+
   constructor(private http: HttpClient) { }
 
   verificaUsuario(user: Usuario) {
-    return this.http.get('http://localhost:3000/usuarios')
+    return this.http.get(this.URL)
     .pipe(
       map((usuario: Usuario[]) => usuario.filter(v => v.email === user.email)),
       map((usuario: Usuario[]) => usuario.find(v => v.senha === user.senha)),
@@ -21,23 +23,23 @@ export class UsuariosService {
   }
 
   getUsuario(id: number) {
-    return this.http.get('http://localhost:3000/usuarios/' + id);
+    return this.http.get(this.URL + '/' + id).pipe(take(1));
   }
 
   postUser(user: Usuario) {
-    return this.http.post('http://localhost:3000/usuarios', user).pipe(take(1))
+    return this.http.post(this.URL, user).pipe(take(1))
   }
 
   putUser(user: Usuario) {
-    return this.http.put('http://localhost:3000/usuarios/' + user.id, user).pipe(take(1))
+    return this.http.put(this.URL+ '/' + user.id, user).pipe(take(1))
   }
 
   deleteUser(id: number) {
-    return this.http.delete('http://localhost:3000/usuarios/' + id).pipe(take(1))
+    return this.http.delete(this.URL+ '/' + id).pipe(take(1))
   }
 
   verificarEmail(email: string) {
-    return this.http.get('http://localhost:3000/usuarios')
+    return this.http.get(this.URL)
     .pipe(
       delay(3000),
       map((usuario: Usuario[]) => usuario.filter(v => v.email === email)),
