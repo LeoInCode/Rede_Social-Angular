@@ -1,5 +1,5 @@
 <div class="container-fluid p-0 m-0 background-collor">
-    <app-nav-bar></app-nav-bar>
+    <app-nav-bar [jogos]="jogos"></app-nav-bar>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-10 col-md-10 col-sm-10">
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container col-lg-6 col-md-8">
+                <div class="container col-lg-8 col-md-10 col-sm-8">
                     <app-feed [feed]="feed"></app-feed>
                 </div>
             </div>

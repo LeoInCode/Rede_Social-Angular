@@ -40,9 +40,31 @@
   "jogos": [
     {
       "id": 1,
-      "nickjogo": "COD",
-      "urlperfil": "http",
-      "urlcapa": "http"
+      "nickjogo": "Call of Duty",
+      "sigla": "COD",
+      "urlperfil": "['../../../assets/cod_perfil.jpeg",
+      "urlcapa": null
+    },
+    {
+      "id": 2,
+      "nickjogo": "League of Legends",
+      "sigla": "LOL",
+      "urlperfil": "['../../../assets/league-perfil.jpg",
+      "urlcapa": null
+    },
+    {
+      "id": 3,
+      "nickjogo": "Lords of the Fallen",
+      "sigla": "LOF",
+      "urlperfil": "['../../../assets/lords-perfil.jpg",
+      "urlcapa": null
+    },
+    {
+      "id": 4,
+      "nickjogo": "Genshin Impact",
+      "sigla": "GI",
+      "urlperfil": "['../../../assets/genshin-perfil.jpg",
+      "urlcapa": null
     }
   ],
   "feed": [

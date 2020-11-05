@@ -1,7 +1,7 @@
 import { JogosService } from './../shared/services/jogos/jogos.service';
 import { Jogo } from './../model/Jogo';
 import { FeedService } from './../shared/services/feed/feed.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Feed } from './../model/Feed';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     this.formulario = this.formBuilder.group({
       nick: [this.usuario.nick],
       nome: [this.usuario.nome],
-      nickjogo: [null],
+      nickjogo: [null, [Validators.required]],
       mensagem: [null],
       urlfotoperfil: [this.usuario.urlfoto],
       urlfotojogo: [null]
@@ -73,6 +73,17 @@ export class HomeComponent implements OnInit {
     this.feedService.postFeed(this.formulario.value).subscribe((data: Feed) =>{
       this.feed.unshift(data);
     })
+    this.resetaDadosForm();
   }
 
+  resetaDadosForm() {
+    this.formulario.patchValue({
+      nick: this.usuario.nick,
+      nome: this.usuario.nome,
+      nickjogo: null,
+      mensagem: null,
+      urlfotoperfil: this.usuario.urlfoto,
+      urlfotojogo: null
+    });
+  }
 }
