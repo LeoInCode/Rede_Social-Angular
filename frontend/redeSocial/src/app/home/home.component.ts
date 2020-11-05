@@ -32,13 +32,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUser();
+    this.getJogos();
 
     this.formulario = this.formBuilder.group({
-      nick: [this.usuario.nick],
-      nome: [this.usuario.nome],
+      nick: [null],
+      nome: [null],
       nickjogo: [null],
       mensagem: [null],
-      urlfoto: ["../../../assets/Foto.jpg"]
+      urlfoto: [null]
     });
   }
 
@@ -60,9 +61,9 @@ export class HomeComponent implements OnInit {
     })
   }
   
-  public(){
-    this.feedService.postFeed(this.formulario.value).subscribe((data: Feed[]) =>{
-      this.feed = [...data,...this.feed];
+  publicar(){
+    this.feedService.postFeed(this.formulario.value).subscribe((data: Feed) =>{
+      console.log(data);
     })
   }
 
