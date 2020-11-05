@@ -33,10 +33,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getUser();
     this.getJogos();
-
+    this.getFeed();
+    
     this.formulario = this.formBuilder.group({
-      nick: [null],
-      nome: [null],
+      nick: [this.usuario.nick],
+      nome: [this.usuario.nome],
       nickjogo: [null],
       mensagem: [null],
       urlfoto: [null]
@@ -58,6 +59,12 @@ export class HomeComponent implements OnInit {
   getJogos(){
     this.jogoService.getJogos().subscribe((data: Jogo[]) => {
       this.jogos = [...data];
+    })
+  }
+
+  getFeed() {
+    this.feedService.getFeed().subscribe((data: Feed[]) => {
+      this.feed = [...data];
     })
   }
   
