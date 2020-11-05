@@ -16,7 +16,7 @@ const routes: Routes = [
     path: 'home/:id', component: HomeComponent,   
   },
   {
-    path: 'jogo', component: JogoComponent,   
+    path: 'jogo/:sigla', component: JogoComponent,
   },
   {
     path: 'perfil', component: PerfilComponent,   

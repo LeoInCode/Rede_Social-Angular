@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
 import { Jogo } from './../../model/Jogo';
@@ -12,9 +13,13 @@ export class NavBarComponent implements OnInit {
 
   @Input() jogos: Jogo[] = [];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  navigateJogo(jogo: string) {
+    this.router.navigate(['jogo', jogo]);
   }
 
 }
