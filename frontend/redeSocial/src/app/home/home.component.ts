@@ -1,3 +1,4 @@
+import { FeedService } from './../shared/services/feed/feed.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Feed } from './../model/Feed';
 import { Component, OnInit } from '@angular/core';
@@ -16,13 +17,14 @@ export class HomeComponent implements OnInit {
 
   id: number
   usuario: Usuario;
-  feed: Feed;
+  feed: Feed[];
   formulario: FormGroup;
 
   constructor(private route: ActivatedRoute,
               private userServicer: UsuariosService,
               private userContext: UserContextService,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private feedService: FeedService) { }
 
   ngOnInit(): void {
     this.getUser();
@@ -49,7 +51,9 @@ export class HomeComponent implements OnInit {
   }
   
   public(){
-    
+    this.feedService.postFeed(this.formulario.value).subscribe((data: Feed[]) =>{
+      this.feed = [...data,...this.feed];
+    })
   }
 
 }

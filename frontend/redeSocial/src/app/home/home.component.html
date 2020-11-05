@@ -12,9 +12,9 @@
                                 </div>
                             </div>
                             <div class="col-md-11 col-lg-11 col-sm-11 col-11 mt-2">
-                                <form [formGroup]="formulario">
-                                    <select class="custom-select mr-sm-3 col-md-3 col-lg-3 col-3 ml-4 mb-1" id="inlineFormCustomSelect">
-                                        <option selected formControlName="nickjogo">Escolher...</option>
+                                <form [formGroup]="formulario" (ngSubmit)="publicar()">
+                                    <select class="custom-select mr-sm-3 col-md-3 col-lg-3 col-3 ml-4 mb-1" formControlName="nickjogo" id="inlineFormCustomSelect">
+                                        <option selected>Escolher...</option>
                                     </select>
                                     <div class="form-group">
                                         <div class="col-md-12 ml-2">
