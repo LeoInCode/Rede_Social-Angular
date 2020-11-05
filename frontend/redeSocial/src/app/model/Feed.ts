@@ -3,6 +3,7 @@ export class Feed {
     public nick: string
     public nome: string
     public mensagem: string
-    public urlfoto: string
+    public urlfotoperfil: string
+    public urlfotojogo: string
     public nickjogo: string
 }

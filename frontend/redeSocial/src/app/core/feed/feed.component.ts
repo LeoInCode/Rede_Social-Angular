@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 
 import { Feed } from './../../model/Feed';
 
@@ -12,9 +12,13 @@ export class FeedComponent implements OnInit {
 
   @Input() feed: Feed[] = [];
 
-  constructor() { }
+  constructor(private changeDetection: ChangeDetectorRef) { }
 
   ngOnInit(): void {
+  }
+
+  ngDoCheck() {
+    this.changeDetection.detectChanges();
   }
 
   trackById(index: number, item: Feed) {

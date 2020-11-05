@@ -6,7 +6,7 @@
       "nome": "Leonardo",
       "email": "leo@leo.com",
       "senha": "12345",
-      "urlfoto": "http",
+      "urlfoto": "../../../assets/Foto.jpg",
       "urlbackground": "http",
       "contatos": [
         "leo",
@@ -51,8 +51,18 @@
       "nick": "LeoM553",
       "nome": "Leonardo",
       "mensagem": "Qualquer coisa",
-      "urlfoto": "http",
+      "urlfotoperfil": "../../../assets/Foto.jpg",
+      "urlfotojogo": "../../../assets/Foto.jpg",
       "nickjogo": "COD"
+    },
+    {
+      "nick": "leo",
+      "nome": "Leonardo Souza Mendes",
+      "nickjogo": "COD",
+      "mensagem": "Mensagem",
+      "urlfotoperfil": "../../../assets/perfil-sem-foto.jpg",
+      "urlfotojogo": "../../../assets/cod.jpg",
+      "id": 2
     }
   ]
 }

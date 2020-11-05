@@ -40,7 +40,8 @@ export class HomeComponent implements OnInit {
       nome: [this.usuario.nome],
       nickjogo: [null],
       mensagem: [null],
-      urlfoto: [null]
+      urlfotoperfil: [this.usuario.urlfoto],
+      urlfotojogo: [null]
     });
   }
 
@@ -70,7 +71,7 @@ export class HomeComponent implements OnInit {
   
   publicar(){
     this.feedService.postFeed(this.formulario.value).subscribe((data: Feed) =>{
-      console.log(data);
+      this.feed.unshift(data);
     })
   }
 
