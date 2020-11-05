@@ -1,40 +1,49 @@
 <div class="container-fluid p-0 m-0 background-collor">
     <app-nav-bar></app-nav-bar>
-
-    <div class="container publicar-collor col-lg-5 col-md-8 col-sm-10 shadow-lg">
-        <div class="row mt-5 mb-5">
-            <div class="col-md-1 col-lg-1 col-sm-1 col-1">
-                <div class="row ml-0 mt-3" style="width: 4rem;">
-                    <img src="../../../assets/Foto.jpg" class="card-img-top rounded-circle" alt="Foto do usuário">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-10 col-md-10 col-sm-10">
+                <div class="container d-flex justify-content-center mt-5">
+                    <div class="publicar-collor col-lg-8 col-md-10 col-sm-10 shadow-lg">
+                        <div class="row">
+                            <div class="col-md-1 col-lg-1 col-sm-1 col-1">
+                                <div class="row ml-0 mt-3" style="width: 4rem;">
+                                    <img src="{{ usuario.urlfoto }}" class="card-img-top rounded-circle" alt="Foto do usuário">
+                                </div>
+                            </div>
+                            <div class="col-md-11 col-lg-11 col-sm-11 col-11 mt-2">
+                                <form [formGroup]="formulario">
+                                    <select class="custom-select mr-sm-3 col-md-3 col-lg-3 col-3 ml-4 mb-1" id="inlineFormCustomSelect">
+                                        <option selected formControlName="nickjogo">Escolher...</option>
+                                    </select>
+                                    <div class="form-group">
+                                        <div class="col-md-12 ml-2">
+                                            <textarea type="text" formControlName="mensagem" class="form-control" id="nome" rows="4" placeholder="Digite algo.."></textarea>
+                                        </div>
+                                        <div class="col-md-12 mt-1 ml-2">
+                                            <input type="text" formControlName="urlfoto" class="form-control" id="comentario" placeholder="Insira um link de foto">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 text-right rounded">
+                                            <button type="submit" class="btn btn-primary">Publicar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container col-lg-6 col-md-6">
+                    <app-feed></app-feed>
+                    <app-feed></app-feed>
                 </div>
             </div>
-            <div class="col-md-11 col-lg-11 col-sm-11 col-11 mt-2">
-                <select class="custom-select mr-sm-3 col-md-3 col-lg-3 col-3 ml-4 mb-1" id="inlineFormCustomSelect">
-                    <option selected>Escolher...</option>
-                </select>
-                <form>
-                    <div class="form-group">
-                        <div class="col-md-12 ml-2">
-                            <textarea type="text" class="form-control" id="nome" rows="4" placeholder="Digite algo.."></textarea>
-                        </div>
-                        <div class="col-md-12 mt-1 ml-2">
-                            <input type="text" class="form-control" id="comentario" placeholder="Insira um link de foto">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-12 text-right rounded">
-                            <button type="submit" class="btn btn-primary">Publicar</button>
-                        </div>
-                    </div>
-                </form>
+            <div class="p-0 col-lg-2 col-md-2">
+                <div class="d-flex justify-content-end">
+                    <app-contatos></app-contatos>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container col-lg-5 col-md-8">
-        <app-feed></app-feed>
-        <app-feed></app-feed>
-    </div>
-    <div class="p-0 fixed-bottom d-flex justify-content-end">
-        <app-contatos></app-contatos>
     </div>
 </div>

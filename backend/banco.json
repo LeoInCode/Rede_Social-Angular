@@ -9,23 +9,32 @@
       "urlfoto": "http",
       "urlbackground": "http",
       "contatos": [
-        "Kaue",
+        "leo",
         "Eduardo"
       ],
       "chat": [
         {
-          "Kaue": [
+          "leo": [
             {
               "nick": "LeoM553",
               "mensagem": "Oi"
             },
             {
-              "nick": "Kaue",
+              "nick": "leo",
               "mensagem": "E aí"
             }
           ]
         }
       ]
+    },
+    {
+      "nick": "leo",
+      "nome": "Leonardo Souza Mendes",
+      "email": "leo-mendes-souza@hotmail.com",
+      "senha": "12345678",
+      "urlfoto": "../../../assets/perfil-sem-foto.jpg",
+      "urlbackground": null,
+      "id": 2
     }
   ],
   "jogos": [

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Usuario } from '../../../model/Usuario';
-import { delay, map, reduce, take, tap } from 'rxjs/operators';
+import { delay, map, take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +39,7 @@ export class UsuariosService {
   verificarEmail(email: string) {
     return this.http.get('http://localhost:3000/usuarios')
     .pipe(
+      delay(3000),
       map((usuario: Usuario[]) => usuario.filter(v => v.email === email)),
       map((usuario: any[]) => usuario.length > 0),
       take(1)

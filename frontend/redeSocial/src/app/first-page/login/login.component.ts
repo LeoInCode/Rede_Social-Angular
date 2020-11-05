@@ -4,6 +4,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import { UsuariosService } from './../../shared/services/usuarios/usuarios.service';
 import { Router } from '@angular/router';
+import { UserContextService } from './../../shared/services/usuarios/user-context.service';
 
 @Component({
   selector: 'app-login',
@@ -17,10 +18,10 @@ export class LoginComponent implements OnInit {
   faSpinner = faSpinner
   iconViewer = false;
 
-  constructor(
-    private formBuilder: FormBuilder, 
-    private userService: UsuariosService,
-    private router: Router) { }
+  constructor(private formBuilder: FormBuilder, 
+              private userService: UsuariosService,
+              private router: Router,
+              private userContext: UserContextService) { }
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
@@ -44,11 +45,11 @@ export class LoginComponent implements OnInit {
       this.iconViewer = true;
       this.userService.verificaUsuario(this.formulario.value).subscribe(data => {
         if(data == null){
-          console.log("null");
           this.mensagem = "Email ou Senha incorretos"
           this.iconViewer = false;
         }else{
-          console.log(data);
+          //console.log(data);
+          this.userContext.user = data;
           this.router.navigate(['home', data.id]);
         }
       },
