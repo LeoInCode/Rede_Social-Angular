@@ -1,9 +1,10 @@
-import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { JogoResolver } from './shared/services/jogos/jogo.resolver';
 import { FirstPageModule } from './first-page/first-page.module';
 import { JogoModule } from './jogo/jogo.module';
 import { HomeModule } from './home/home.module';
@@ -13,7 +14,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { JogoComponent } from './jogo/jogo.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [JogoResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

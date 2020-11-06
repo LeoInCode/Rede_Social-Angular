@@ -21,8 +21,4 @@ export class FeedComponent implements OnInit {
     this.changeDetection.detectChanges();
   }
 
-  trackById(index: number, item: Feed) {
-    return item.id;
-  }
-
 }

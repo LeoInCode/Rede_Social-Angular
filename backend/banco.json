@@ -75,7 +75,16 @@
       "mensagem": "Qualquer coisa",
       "urlfotoperfil": "../../../assets/Foto.jpg",
       "urlfotojogo": "../../../assets/Foto.jpg",
-      "nickjogo": "COD"
+      "nickjogo": "Call of Duty"
+    },
+    {
+      "nick": "leo",
+      "nome": "Leonardo Souza Mendes",
+      "nickjogo": "League of Legends",
+      "mensagem": "Mensagem",
+      "urlfotoperfil": "../../../assets/perfil-sem-foto.jpg",
+      "urlfotojogo": "../../../assets/cod.jpg",
+      "id": 2
     }
   ]
 }

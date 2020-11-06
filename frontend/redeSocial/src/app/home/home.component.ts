@@ -1,14 +1,14 @@
-import { JogosService } from './../shared/services/jogos/jogos.service';
-import { Jogo } from './../model/Jogo';
-import { FeedService } from './../shared/services/feed/feed.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Feed } from './../model/Feed';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Usuario } from './../model/Usuario';
 import { UsuariosService } from './../shared/services/usuarios/usuarios.service';
 import { UserContextService } from './../shared/services/usuarios/user-context.service';
+import { JogosService } from './../shared/services/jogos/jogos.service';
+import { Jogo } from './../model/Jogo';
+import { FeedService } from './../shared/services/feed/feed.service';
+import { Feed } from './../model/Feed';
 
 @Component({
   selector: 'app-home',
@@ -34,7 +34,6 @@ export class HomeComponent implements OnInit {
     this.getUser();
     this.getJogos();
     this.getFeed();
-    
   }
 
   getUser(){
@@ -69,6 +68,7 @@ export class HomeComponent implements OnInit {
 
   getFeed() {
     this.feedService.getFeed().subscribe((data: Feed[]) => {
+      data.reverse();
       this.feed = [...data];
     })
   }
