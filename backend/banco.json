@@ -43,28 +43,28 @@
       "nickjogo": "Call of Duty",
       "sigla": "COD",
       "urlperfil": "../../../assets/cod_perfil.jpeg",
-      "urlcapa": null
+      "urlcapa": "../../assets/cod.jpg"
     },
     {
       "id": 2,
       "nickjogo": "League of Legends",
       "sigla": "LOL",
       "urlperfil": "../../../assets/league-of-legends.jpg",
-      "urlcapa": null
+      "urlcapa": "../../assets/league-of-legends-capa.jpg"
     },
     {
       "id": 3,
       "nickjogo": "Lords of the Fallen",
       "sigla": "LOF",
       "urlperfil": "../../../assets/lords-perfil.jpg",
-      "urlcapa": null
+      "urlcapa": "../../assets/lords-capa.jpg"
     },
     {
       "id": 4,
       "nickjogo": "Genshin Impact",
       "sigla": "GI",
       "urlperfil": "['../../../assets/genshin-perfil.jpg",
-      "urlcapa": null
+      "urlcapa": "../../assets/genshin_banner.jpg"
     }
   ],
   "feed": [
@@ -76,15 +76,6 @@
       "urlfotoperfil": "../../../assets/Foto.jpg",
       "urlfotojogo": "../../../assets/Foto.jpg",
       "nickjogo": "COD"
-    },
-    {
-      "nick": "leo",
-      "nome": "Leonardo Souza Mendes",
-      "nickjogo": "COD",
-      "mensagem": "Mensagem",
-      "urlfotoperfil": "../../../assets/perfil-sem-foto.jpg",
-      "urlfotojogo": "../../../assets/cod.jpg",
-      "id": 2
     }
   ]
 }

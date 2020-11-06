@@ -35,6 +35,22 @@ export class HomeComponent implements OnInit {
     this.getJogos();
     this.getFeed();
     
+  }
+
+  getUser(){
+    if(this.userContext.user){
+      this.usuario = this.userContext.user
+    }else{
+      this.id = this.route.snapshot.params['id'];
+      this.userServicer.getUsuario(this.id).subscribe(async (data: Usuario) => {
+        this.usuario = await data;
+        this.userContext.user = await data;
+        this.iniciaFormulario();
+      })
+    }
+  }
+
+  iniciaFormulario() {
     this.formulario = this.formBuilder.group({
       nick: [this.usuario.nick],
       nome: [this.usuario.nome],
@@ -43,18 +59,6 @@ export class HomeComponent implements OnInit {
       urlfotoperfil: [this.usuario.urlfoto],
       urlfotojogo: [null]
     });
-  }
-
-  getUser(){
-    if(this.userContext.user){
-      this.usuario = this.userContext.user
-    }else{
-      this.id = this.route.snapshot.params['id'];
-      this.userServicer.getUsuario(this.id).subscribe((data: Usuario) => {
-        this.usuario = data;
-        this.userContext.user = data;
-      })
-    }
   }
 
   getJogos(){

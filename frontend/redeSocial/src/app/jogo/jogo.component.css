@@ -6,8 +6,7 @@
     background-size: cover;
 }
 
-.background-image {
-    background-image: url('../../assets/lords-capa.jpg');
+#background-image {
     height: 70vh;
     background-size: cover;
 }
