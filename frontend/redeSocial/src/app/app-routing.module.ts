@@ -22,7 +22,6 @@ const routes: Routes = [
   {
     path: 'perfil', component: PerfilComponent,   
   },
-
 ];
 
 @NgModule({

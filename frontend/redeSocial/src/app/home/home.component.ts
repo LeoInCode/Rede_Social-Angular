@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit {
   getUser(){
     if(this.userContext.user){
       this.usuario = this.userContext.user
+      this.iniciaFormulario();
     }else{
       this.id = this.route.snapshot.params['id'];
       this.userServicer.getUsuario(this.id).subscribe(async (data: Usuario) => {
