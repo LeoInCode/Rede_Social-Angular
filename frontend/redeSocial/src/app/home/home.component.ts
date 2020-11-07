@@ -94,6 +94,6 @@ export class HomeComponent implements OnInit {
   }
 
   navigatePerfil() {
-    this.router.navigate(['',this.usuario.nick]);
+    this.router.navigate(['',this.userContext.user.nick]);
   }
 }

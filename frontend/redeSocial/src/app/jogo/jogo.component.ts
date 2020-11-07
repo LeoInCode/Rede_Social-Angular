@@ -1,12 +1,12 @@
-import { UserContextService } from './../shared/services/usuarios/user-context.service';
-import { Usuario } from './../model/Usuario';
-import { Feed } from './../model/Feed';
-import { FeedService } from './../shared/services/feed/feed.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { Jogo } from './../model/Jogo';
 import { JogosService } from './../shared/services/jogos/jogos.service';
+import { UserContextService } from './../shared/services/usuarios/user-context.service';
+import { Usuario } from './../model/Usuario';
+import { Feed } from './../model/Feed';
+import { FeedService } from './../shared/services/feed/feed.service';
 
 @Component({
   selector: 'app-jogo',

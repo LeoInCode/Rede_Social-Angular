@@ -8,7 +8,7 @@
     <div class="container d-flex justify-content-center">
         <div class="row mt-5 mb-5">
             <div class="row mt-5" style="width:10rem;">
-                <img src="../../../assets/Foto.jpg" class="card-img-top rounded-circle" alt="Foto do usuário">
+                <img src="{{ usuario.urlfoto }}" class="card-img-top rounded-circle" alt="Foto do usuário">
             </div>
         </div>
     </div>
@@ -27,31 +27,8 @@
                 <div class="container" style="height: 30rem;">
                     <div class="card-body pt-0">
                         <div class="card-deck mt-3">
-                            <div class="card">
-                            <img class="card-img-top" src="../../../assets/Foto.jpg" alt="Imagem de capa do card">
-                            </div>
-                            <div class="card">
-                            <img class="card-img-top" src="../../../assets/Foto.jpg" alt="Imagem de capa do card">
-                            </div>
-                            <div class="card">
-                            <img class="card-img-top" src="../../../assets/Foto.jpg" alt="Imagem de capa do card">
-                            </div>
-                            <div class="card">
-                                <img class="card-img-top" src="../../../assets/Foto.jpg" alt="Imagem de capa do card">
-                            </div>
-                        </div>
-                        <div class="card-deck mt-3">
-                            <div class="card">
-                            <img class="card-img-top" src="../../../assets/Foto.jpg" alt="Imagem de capa do card">
-                            </div>
-                            <div class="card">
-                            <img class="card-img-top" src="../../../assets/Foto.jpg" alt="Imagem de capa do card">
-                            </div>
-                            <div class="card">
-                            <img class="card-img-top" src="../../../assets/Foto.jpg" alt="Imagem de capa do card">
-                            </div>
-                            <div class="card">
-                                <img class="card-img-top" src="../../../assets/Foto.jpg" alt="Imagem de capa do card">
+                            <div class="card border-0" *ngFor="let item of feed">
+                                <img class="card-img-top" src="{{ item.urlfotojogo }}" alt="Imagem de capa do card">
                             </div>
                         </div>
                     </div>

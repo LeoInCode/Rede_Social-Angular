@@ -26,27 +26,26 @@ export class PerfilComponent implements OnInit {
               private jogoService: JogosService) { }
 
   ngOnInit(): void {
-    if(this.userContext.user){
-      this.usuario = this.userContext.user;
-      this.getFeed();
-      this.getJogos();
-    }else{
       this.getUser();
-    }
   }
 
   getUser(){
     this.route.data.subscribe(async (data: { user: Usuario }) => {
       this.usuario = await data.user;
+      if(this.usuario === this.userContext.user){
+        this.usuario = this.userContext.user;
+      }
       this.getFeed();
       this.getJogos();
+      console.log(this.usuario);
     })
   }
 
   getFeed() {
-    this.feedService.getFeedByNickJogo(this.usuario.nick).subscribe((data: Feed[]) => {
+    this.feedService.getFeedByNickUser(this.usuario.nick).subscribe((data: Feed[]) => {
       data.reverse();
       this.feed = [...data];
+      console.log(this.feed);
     })
   }
 
