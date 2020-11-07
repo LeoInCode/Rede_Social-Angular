@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ChangeDetectionStrategy, Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 
 import { Feed } from './../../model/Feed';
@@ -12,7 +13,8 @@ export class FeedComponent implements OnInit {
 
   @Input() feed: Feed[] = [];
 
-  constructor(private changeDetection: ChangeDetectorRef) { }
+  constructor(private changeDetection: ChangeDetectorRef,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -21,4 +23,7 @@ export class FeedComponent implements OnInit {
     this.changeDetection.detectChanges();
   }
 
+  navigatePerfil(feed: Feed) {
+    this.router.navigate(['',feed.nick]);
+  }
 }

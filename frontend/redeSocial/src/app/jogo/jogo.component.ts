@@ -1,3 +1,5 @@
+import { UserContextService } from './../shared/services/usuarios/user-context.service';
+import { Usuario } from './../model/Usuario';
 import { Feed } from './../model/Feed';
 import { FeedService } from './../shared/services/feed/feed.service';
 import { ActivatedRoute } from '@angular/router';
@@ -17,12 +19,16 @@ export class JogoComponent implements OnInit {
   sigla: string;
   jogo: Jogo = new Jogo;
   feed: Feed[];
+  usuario: Usuario = new Usuario;
 
   constructor(private jogoService: JogosService,
               private route: ActivatedRoute,
-              private feedService: FeedService) { }
+              private feedService: FeedService,
+              private userContext: UserContextService) { }
 
   ngOnInit(): void {
+    this.usuario = this.userContext.user;
+
     this.jogoService.getJogos().subscribe((data: Jogo[]) => {
       this.jogos = [...data];
     })
@@ -42,7 +48,7 @@ export class JogoComponent implements OnInit {
   }
 
   getFeed() {
-    this.feedService.getFeedByNick(this.jogo.nickjogo).subscribe((data: Feed[]) => {
+    this.feedService.getFeedByNickJogo(this.jogo.nickjogo).subscribe((data: Feed[]) => {
       data.reverse();
       this.feed = [...data];
     })

@@ -1,6 +1,6 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Usuario } from './../model/Usuario';
 import { UsuariosService } from './../shared/services/usuarios/usuarios.service';
@@ -28,7 +28,8 @@ export class HomeComponent implements OnInit {
               private userContext: UserContextService,
               private formBuilder: FormBuilder,
               private feedService: FeedService,
-              private jogoService: JogosService) { }
+              private jogoService: JogosService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.getUser();
@@ -90,5 +91,9 @@ export class HomeComponent implements OnInit {
       urlfotoperfil: this.usuario.urlfoto,
       urlfotojogo: null
     });
+  }
+
+  navigatePerfil() {
+    this.router.navigate(['',this.usuario.nick]);
   }
 }

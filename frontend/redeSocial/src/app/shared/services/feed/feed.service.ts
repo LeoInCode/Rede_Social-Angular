@@ -17,11 +17,18 @@ export class FeedService {
     return this.http.get(this.URL).pipe(take(1));
   }
 
-  getFeedByNick(nick: string) {
+  getFeedByNickJogo(nick: string) {
     return this.http.get(this.URL)
     .pipe(
       map((feed: Feed[]) => feed.filter(v => v.nickjogo === nick)),
-      //map((feed: Feed[]) => feed.find(v => v.nickjogo === nick))
+      take(1)
+    );
+  }
+
+  getFeedByNickUser(nick: string) {
+    return this.http.get(this.URL)
+    .pipe(
+      map((feed: Feed[]) => feed.filter(v => v.nick === nick)),
       take(1)
     );
   }

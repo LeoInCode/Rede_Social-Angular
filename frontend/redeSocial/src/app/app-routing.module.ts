@@ -20,7 +20,7 @@ const routes: Routes = [
     path: 'jogo/:sigla', component: JogoComponent, resolve: { jogo: JogoResolver },
   },
   {
-    path: 'perfil', component: PerfilComponent,   
+    path: ':nick', component: PerfilComponent,   
   },
 ];
 
