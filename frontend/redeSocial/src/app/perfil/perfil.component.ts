@@ -1,9 +1,12 @@
-import { UserContextService } from './../shared/services/usuarios/user-context.service';
 import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+
 import { FeedService } from './../shared/services/feed/feed.service';
 import { Feed } from './../model/Feed';
 import { Usuario } from './../model/Usuario';
-import { Component, OnInit, Input } from '@angular/core';
+import { JogosService } from './../shared/services/jogos/jogos.service';
+import { Jogo } from './../model/Jogo';
+import { UserContextService } from './../shared/services/usuarios/user-context.service';
 
 @Component({
   selector: 'app-perfil',
@@ -14,21 +17,42 @@ export class PerfilComponent implements OnInit {
 
   usuario: Usuario = new Usuario;
   feed: Feed[];
+  jogos: Jogo[];
 
 
   constructor(private feedService: FeedService,
-              private router: ActivatedRoute,
-              private userContext: UserContextService) { }
+              private route: ActivatedRoute,
+              private userContext: UserContextService,
+              private jogoService: JogosService) { }
 
   ngOnInit(): void {
-    this.usuario = this.userContext.user;
+    if(this.userContext.user){
+      this.usuario = this.userContext.user;
+      this.getFeed();
+      this.getJogos();
+    }else{
+      this.getUser();
+    }
+  }
 
+  getUser(){
+    this.route.data.subscribe(async (data: { user: Usuario }) => {
+      this.usuario = await data.user;
+      this.getFeed();
+      this.getJogos();
+    })
   }
 
   getFeed() {
     this.feedService.getFeedByNickJogo(this.usuario.nick).subscribe((data: Feed[]) => {
       data.reverse();
       this.feed = [...data];
+    })
+  }
+
+  getJogos() {
+    this.jogoService.getJogos().subscribe((data: Jogo[]) => {
+      this.jogos = [...data];
     })
   }
 }

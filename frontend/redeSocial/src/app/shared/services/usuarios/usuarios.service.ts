@@ -22,6 +22,15 @@ export class UsuariosService {
     );
   }
 
+  getUserByNick(nick: string) {
+    return this.http.get(this.URL)
+    .pipe(
+      map((jogo: Usuario[]) => jogo.filter(v => v.nick === nick)),
+      //((jogo: Usuario[]) => jogo.find(v => v.nick === nick)),
+      take(1)
+    );
+  }
+
   getUsuario(id: number) {
     return this.http.get(this.URL + '/' + id).pipe(take(1));
   }

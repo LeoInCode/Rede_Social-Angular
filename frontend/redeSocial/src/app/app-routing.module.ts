@@ -1,3 +1,4 @@
+import { UsuarioResolver } from './shared/services/usuarios/usuario.resolver';
 import { JogoResolver } from './shared/services/jogos/jogo.resolver';
 import { JogoComponent } from './jogo/jogo.component';
 import { PerfilComponent } from './perfil/perfil.component';
@@ -20,7 +21,7 @@ const routes: Routes = [
     path: 'jogo/:sigla', component: JogoComponent, resolve: { jogo: JogoResolver },
   },
   {
-    path: ':nick', component: PerfilComponent,   
+    path: ':nick', component: PerfilComponent, resolve: { user: UsuarioResolver },
   },
 ];
 
