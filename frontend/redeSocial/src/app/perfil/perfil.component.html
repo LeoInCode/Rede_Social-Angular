@@ -24,13 +24,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="container" style="height: 30rem;">
-                    <div class="card-body pt-0">
-                        <div class="card-deck mt-3">
-                            <div class="card border-0" *ngFor="let item of feed">
-                                <img class="card-img-top" src="{{ item.urlfotojogo }}" alt="Imagem de capa do card">
-                            </div>
-                        </div>
+                <div class="container d-flex flex-wrap mb-1" style="height: auto;">
+                    <div class="card-deck mt-3" *ngFor="let item of feed">
+                        <img class="card-img-top ml-4 mr-3" src="{{ item.urlfotojogo }}" style="width: 40vh;" alt="{{ item.nickjogo }}">
                     </div>
                 </div>
             </div>

@@ -37,15 +37,12 @@ export class PerfilComponent implements OnInit {
       }
       this.getFeed();
       this.getJogos();
-      console.log(this.usuario);
     })
   }
 
   getFeed() {
     this.feedService.getFeedByNickUser(this.usuario.nick).subscribe((data: Feed[]) => {
-      data.reverse();
       this.feed = [...data];
-      console.log(this.feed);
     })
   }
 
