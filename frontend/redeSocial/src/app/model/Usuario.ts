@@ -6,4 +6,5 @@ export class Usuario {
     public senha: string
     public urlfoto?: string
     public urlbackground?: string
+    public contatos?: string[]
 }

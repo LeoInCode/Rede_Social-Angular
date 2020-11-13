@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Usuario } from '../../../model/Usuario';
-import { delay, map, take } from 'rxjs/operators';
+import { delay, map, take, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +25,8 @@ export class UsuariosService {
   getUserByNick(nick: string) {
     return this.http.get(this.URL)
     .pipe(
-      map((jogo: Usuario[]) => jogo.filter(v => v.nick === nick)),
-      map((jogo: Usuario[]) => jogo.find(v => v.nick === nick)),
+      map((usuario: Usuario[]) => usuario.filter(v => v.nick === nick)),
+      map((usuario: Usuario[]) => usuario.find(v => v.nick === nick)),
       take(1)
     );
   }
@@ -38,10 +38,19 @@ export class UsuariosService {
   verificarEmail(email: string) {
     return this.http.get(this.URL)
     .pipe(
-      delay(3000),
+      delay(4000),
       map((usuario: Usuario[]) => usuario.filter(v => v.email === email)),
-      map((usuario: any[]) => usuario.length > 0),
+      map((usuario: Usuario[]) => usuario.length > 0),
       take(1)
     );
+  }
+
+  verificaAmizade(nickPerfil: string, nickJogador: string) {
+    return this.http.get(this.URL)
+    .pipe(
+      map((usuario: Usuario[]) => usuario.filter(v => v.nick === nickPerfil)),
+      map((usuario: Usuario[]) => usuario.map(v => v.contatos.includes(nickJogador))),
+      take(1)
+    )
   }
 }

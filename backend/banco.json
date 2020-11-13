@@ -11,20 +11,6 @@
       "contatos": [
         "leo",
         "Eduardo"
-      ],
-      "chat": [
-        {
-          "leo": [
-            {
-              "nick": "LeoM553",
-              "mensagem": "Oi"
-            },
-            {
-              "nick": "leo",
-              "mensagem": "E aí"
-            }
-          ]
-        }
       ]
     },
     {
@@ -34,7 +20,11 @@
       "senha": "12345678",
       "urlfoto": "../../../assets/perfil-sem-foto.jpg",
       "urlbackground": null,
-      "id": 2
+      "id": 2,
+      "contatos": [
+        "LeoM553",
+        "Eduardo"
+      ]
     }
   ],
   "jogos": [
