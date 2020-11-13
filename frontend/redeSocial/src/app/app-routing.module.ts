@@ -15,7 +15,7 @@ const routes: Routes = [
     path: '', component: FirstPageComponent
   },
   {
-    path: 'home/:id', component: HomeComponent,   
+    path: 'home/:nick', component: HomeComponent,   
   },
   {
     path: 'jogo/:sigla', component: JogoComponent, resolve: { jogo: JogoResolver },

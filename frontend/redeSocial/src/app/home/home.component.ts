@@ -17,7 +17,6 @@ import { Feed } from './../model/Feed';
 })
 export class HomeComponent implements OnInit {
 
-  id: number
   usuario: Usuario;
   feed: Feed[];
   formulario: FormGroup;
@@ -42,8 +41,8 @@ export class HomeComponent implements OnInit {
       this.usuario = this.userContext.user
       this.iniciaFormulario();
     }else{
-      this.id = this.route.snapshot.params['id'];
-      this.userServicer.getUsuario(this.id).subscribe(async (data: Usuario) => {
+      const nick = this.route.snapshot.params['nick'];
+      this.userServicer.getUserByNick(nick).subscribe(async (data: Usuario) => {
         this.usuario = await data;
         this.userContext.user = await data;
         this.iniciaFormulario();

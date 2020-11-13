@@ -48,9 +48,8 @@ export class LoginComponent implements OnInit {
           this.mensagem = "Email ou Senha incorretos"
           this.iconViewer = false;
         }else{
-          //console.log(data);
           this.userContext.user = data;
-          this.router.navigate(['home', data.id]);
+          this.router.navigate(['home', data.nick]);
         }
       },
       (error: any) => {
