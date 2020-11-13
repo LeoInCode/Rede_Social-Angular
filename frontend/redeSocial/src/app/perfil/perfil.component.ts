@@ -43,6 +43,7 @@ export class PerfilComponent implements OnInit {
       }
       this.getFeed();
       this.getJogos();
+      this.insereFundoCss();
     })
   }
 
@@ -62,5 +63,9 @@ export class PerfilComponent implements OnInit {
     this.jogoService.getJogos().subscribe((data: Jogo[]) => {
       this.jogos = [...data];
     })
+  }
+  
+  insereFundoCss() {
+    document.getElementById('background-image').style.backgroundImage = "url("+this.usuario.urlbackground+")";
   }
 }

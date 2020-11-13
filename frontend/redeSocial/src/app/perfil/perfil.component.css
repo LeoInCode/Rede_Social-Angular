@@ -7,7 +7,6 @@
 }
 
 .background-image {
-    background-image: url('../../assets/cod.jpg');
     background-size: cover;
     height: auto;
 }
