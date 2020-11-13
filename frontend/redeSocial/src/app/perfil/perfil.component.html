@@ -13,7 +13,10 @@
         </div>
     </div>
     <div class="container col-lg-8 col-md-8 col-sm-10">
-        <div class="d-flex justify-content-end mb-2" *ngIf="mostrarBotao" >
+        <div class="d-flex justify-content-end mb-2" *ngIf="mostrarBotaoAdicionar" >
+            <button type="button" class="btn btn-dark btn-lg border-white rounded" (click)="adicionarContato()" >{{ mensagemAmizade }}</button>
+        </div>
+        <div class="d-flex justify-content-end mb-2" *ngIf="mostrarBotaoMensagem" >
             <button type="button" class="btn btn-dark btn-lg border-white rounded">{{ mensagemAmizade }}</button>
         </div>
         <div class="justify-content-center">

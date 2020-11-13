@@ -20,7 +20,8 @@ export class PerfilComponent implements OnInit {
   feed: Feed[];
   jogos: Jogo[];
   mensagemAmizade: string = "Enviar Mensagem";
-  mostrarBotao: boolean = true;
+  mostrarBotaoAdicionar: boolean = false;
+  mostrarBotaoMensagem: boolean = false;
 
 
   constructor(private feedService: FeedService,
@@ -37,9 +38,12 @@ export class PerfilComponent implements OnInit {
     this.route.data.subscribe(async (data: { user: Usuario }) => {
       this.usuario = await data.user;
       if(this.userContext.user){
-        this.usuario.id != this.userContext.user.id ? this.verificaAmizade() : this.mostrarBotao = false;
+        if(this.usuario.id != this.userContext.user.id){
+          this.verificaAmizade();
+        }
       }else{
         this.mensagemAmizade = "Adicionar jogador";
+        this.mostrarBotaoAdicionar = true;
       }
       this.getFeed();
       this.getJogos();
@@ -49,7 +53,13 @@ export class PerfilComponent implements OnInit {
 
   verificaAmizade() {
     this.userService.verificaAmizade(this.userContext.user.nick,this.usuario.nick).subscribe(data => {
-      data[0] ? this.mensagemAmizade = "Enviar Mensagem" : this.mensagemAmizade = "Adicionar jogador"
+      if(data[0]){
+        this.mensagemAmizade = "Enviar Mensagem";
+        this.mostrarBotaoMensagem = true;
+      }else{
+        this.mensagemAmizade = "Adicionar jogador";
+        this.mostrarBotaoAdicionar = true;
+      }
     });
   }
 
@@ -67,5 +77,15 @@ export class PerfilComponent implements OnInit {
   
   insereFundoCss() {
     document.getElementById('background-image').style.backgroundImage = "url("+this.usuario.urlbackground+")";
+  }
+
+  adicionarContato() {
+    this.userContext.user.contatos.push(this.usuario.nick);
+    this.userService.adicionarContato(this.userContext.user).subscribe((data: Usuario) => {
+      this.userContext.user = data;
+      this.mostrarBotaoAdicionar = false;
+      this.mostrarBotaoMensagem = true;
+      this.mensagemAmizade = "Enviar Mensagem"
+    })
   }
 }

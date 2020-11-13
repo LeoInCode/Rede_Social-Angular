@@ -53,4 +53,8 @@ export class UsuariosService {
       take(1)
     )
   }
+
+  adicionarContato(user: Usuario) {
+    return this.http.put(this.URL +"/"+ user.id, user).pipe(take(1))
+  }
 }

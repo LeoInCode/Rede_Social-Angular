@@ -9,7 +9,6 @@
       "urlfoto": "../../../assets/Foto.jpg",
       "urlbackground": "../../../assets/lords-perfil.jpg",
       "contatos": [
-        "leo",
         "Eduardo"
       ]
     },
@@ -22,8 +21,8 @@
       "urlbackground": "../../../assets/cod.jpg",
       "id": 2,
       "contatos": [
-        "LeoM553",
-        "Eduardo"
+        "Eduardo",
+        "LeoM553"
       ]
     }
   ],
