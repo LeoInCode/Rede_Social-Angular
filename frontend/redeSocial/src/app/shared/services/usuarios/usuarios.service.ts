@@ -31,20 +31,8 @@ export class UsuariosService {
     );
   }
 
-  getUsuario(id: number) {
-    return this.http.get(this.URL + '/' + id).pipe(take(1));
-  }
-
   postUser(user: Usuario) {
     return this.http.post(this.URL, user).pipe(take(1))
-  }
-
-  putUser(user: Usuario) {
-    return this.http.put(this.URL+ '/' + user.id, user).pipe(take(1))
-  }
-
-  deleteUser(id: number) {
-    return this.http.delete(this.URL+ '/' + id).pipe(take(1))
   }
 
   verificarEmail(email: string) {
