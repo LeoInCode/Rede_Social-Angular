@@ -19,10 +19,11 @@ import { Feed } from './../model/Feed';
 export class HomeComponent implements OnInit {
 
   usuario: Usuario;
-  feed: Feed[];
+  feed: Feed[] = [];
   formulario: FormGroup;
-  jogos: Jogo[];
-  users: Usuario[];
+  jogos: Jogo[] = [];
+  users: Usuario[] = [];
+  contatos: Usuario[] = [];
 
   constructor(private route: ActivatedRoute,
               private userServicer: UsuariosService,
@@ -79,8 +80,9 @@ export class HomeComponent implements OnInit {
   }
 
   getUsers() {
-    this.usersService.getUsers().subscribe((users: Usuario[]) => {
-      this.users = users;
+    this.usersService.getUsers().subscribe(async (users: Usuario[]) => {
+      this.users = await users;
+      this.buscaAmigos();
     })
   }
   
@@ -104,5 +106,15 @@ export class HomeComponent implements OnInit {
 
   navigatePerfil() {
     this.router.navigate(['',this.userContext.user.nick]);
+  }
+
+  buscaAmigos() {
+    this.userContext.user.contatos.forEach((contato) => {
+      this.users.forEach((user) => {
+        if (contato === user.nick){
+          this.contatos.push(user);
+        }
+      })
+    })
   }
 }

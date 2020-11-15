@@ -5,7 +5,7 @@
       "nick": "LeoM553",
       "nome": "Leonardo",
       "email": "leo@leo.com",
-      "senha": "12345",
+      "senha": "1234567",
       "urlperfil": "../../../assets/Foto.jpg",
       "urlbackground": "../../../assets/lords-perfil.jpg",
       "contatos": [
@@ -21,9 +21,19 @@
       "urlbackground": "../../../assets/cod.jpg",
       "id": 2,
       "contatos": [
-        "Eduardo",
-        "LeoM553"
+        "LeoM553",
+        "Luluzinha"
       ]
+    },
+    {
+      "nick": "Luluzinha",
+      "nome": "Luana Sperling Santana",
+      "email": "lu@lu.com",
+      "senha": "12345678",
+      "urlperfil": "../../../assets/lu.jpg",
+      "urlbackground": "../../../assets/genshin_banner.jpg",
+      "id": 3,
+      "contatos": []
     }
   ],
   "jogos": [

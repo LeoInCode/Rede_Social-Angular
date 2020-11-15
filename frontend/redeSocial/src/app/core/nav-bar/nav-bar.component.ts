@@ -15,7 +15,7 @@ export class NavBarComponent implements OnInit {
 
   @Input() jogos: Jogo[];
   @Input() usuarios: Usuario[];
-  @Input() jogosList: any[];
+  @Input() jogosList: Jogo[];
   users: Usuario[];
   nick: string;
   faGripLinesVertical = faGripLinesVertical;
