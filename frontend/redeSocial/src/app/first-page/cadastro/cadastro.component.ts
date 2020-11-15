@@ -3,9 +3,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import { UsuariosService } from './../../shared/services/usuarios/usuarios.service';
-import { UserContextService } from './../../shared/services/usuarios/user-context.service';
 import { Usuario } from './../../model/Usuario';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cadastro',
@@ -29,7 +28,7 @@ export class CadastroComponent implements OnInit {
       nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(35)]],
       email: [null, [Validators.required, Validators.email, Validators.maxLength(40)], [this.validarEmail.bind(this)]],
       senha: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(12)]],
-      urlfoto: ["../../../assets/perfil-sem-foto.jpg"],
+      urlperfil: ["../../../assets/perfil-sem-foto.jpg"],
       urlbackground: [null]
     });
   }

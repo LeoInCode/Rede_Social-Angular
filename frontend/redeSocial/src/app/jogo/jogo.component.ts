@@ -1,3 +1,4 @@
+import { UsuariosService } from './../shared/services/usuarios/usuarios.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -19,12 +20,14 @@ export class JogoComponent implements OnInit {
   sigla: string;
   jogo: Jogo = new Jogo;
   feed: Feed[];
+  users: Usuario[];
   usuario: Usuario = new Usuario;
 
   constructor(private jogoService: JogosService,
               private route: ActivatedRoute,
               private feedService: FeedService,
-              private userContext: UserContextService) { }
+              private userContext: UserContextService,
+              private usersService: UsuariosService) { }
 
   ngOnInit(): void {
     this.usuario = this.userContext.user;
@@ -33,6 +36,7 @@ export class JogoComponent implements OnInit {
       this.jogos = [...data];
     })
     this.getJogo();
+    this.getUsers();
   }
 
   getJogo(){
@@ -40,6 +44,12 @@ export class JogoComponent implements OnInit {
       this.jogo = await data.jogo;
       this.insereCapaCss();
       this.getFeed();
+    })
+  }
+
+  getUsers() {
+    this.usersService.getUsers().subscribe((users: Usuario[]) => {
+      this.users = users;
     })
   }
 

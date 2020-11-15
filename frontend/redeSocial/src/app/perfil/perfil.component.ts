@@ -19,6 +19,7 @@ export class PerfilComponent implements OnInit {
   usuario: Usuario = new Usuario;
   feed: Feed[];
   jogos: Jogo[];
+  users: Usuario[];
   mensagemAmizade: string = "Enviar Mensagem";
   mostrarBotaoAdicionar: boolean = false;
   mostrarBotaoMensagem: boolean = false;
@@ -32,6 +33,7 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit(): void {
       this.getUser();
+      this.getUsers();
   }
 
   getUser(){
@@ -48,6 +50,12 @@ export class PerfilComponent implements OnInit {
       this.getFeed();
       this.getJogos();
       this.insereFundoCss();
+    })
+  }
+
+  getUsers() {
+    this.userService.getUsers().subscribe((users: Usuario[]) => {
+      this.users = users;
     })
   }
 

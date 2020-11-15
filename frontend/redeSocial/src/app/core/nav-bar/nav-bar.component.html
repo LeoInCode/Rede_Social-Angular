@@ -1,14 +1,20 @@
 <div class="container-fluid p-0 m-0">
-   <nav class="navbar navbar-light navbar-collor">
+    <nav class="navbar navbar-light navbar-collor">
         <form class="form-inline col-lg-12">
             <h3 class="mr-3 col-lg-1 col-md-1 col-sm-1 col-1 corLogo">Logo</h3>
-            <input class="col-lg-5 col-md-5 col-sm-5 col-6 form-control ml-5 rounded-search" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+            <input [(ngModel)]="findUserOrJogo" name="find" class="col-lg-5 col-md-5 col-sm-5 col-6 form-control ml-5 rounded-search" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
         </form>
     </nav>
     <div class="nav-collor pt-1 pb-1">
         <ul class="nav container form-inline" >
-            <li class="nav-item ml-3" style="width: 3rem;" *ngFor="let jogo of jogos">
+            <li class="nav-item ml-3" style="width: 3rem;" *ngFor="let jogo of jogosList">
                 <img src="{{ jogo.urlperfil }}" (click)="navigateJogo(jogo.sigla)"  class="card-img-top rounded-circle" alt="{{ jogo.nickjogo }}">
+            </li>
+
+            <fa-icon *ngIf="viewGrips"  size="2x" class="ml-3 collor-icon" [icon]="faGripLinesVertical"></fa-icon>
+            
+            <li class="nav-item ml-3" style="width: 3rem;" *ngFor="let user of users">
+                <img src="{{ user.urlperfil }}" (click)="navigatePerfil(user.nick)"  class="card-img-top rounded-circle" alt="{{ user.nick }}">
             </li>
         </ul>
     </div>

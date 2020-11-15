@@ -13,6 +13,10 @@ export class UsuariosService {
 
   constructor(private http: HttpClient) { }
 
+  getUsers() {
+    return this.http.get(this.URL).pipe(take(1))
+  }
+
   verificaUsuario(user: Usuario) {
     return this.http.get(this.URL)
     .pipe(

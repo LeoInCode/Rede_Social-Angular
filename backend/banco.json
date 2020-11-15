@@ -6,7 +6,7 @@
       "nome": "Leonardo",
       "email": "leo@leo.com",
       "senha": "12345",
-      "urlfoto": "../../../assets/Foto.jpg",
+      "urlperfil": "../../../assets/Foto.jpg",
       "urlbackground": "../../../assets/lords-perfil.jpg",
       "contatos": [
         "Eduardo"
@@ -17,7 +17,7 @@
       "nome": "Leonardo Souza Mendes",
       "email": "leo-mendes-souza@hotmail.com",
       "senha": "12345678",
-      "urlfoto": "../../../assets/perfil-sem-foto.jpg",
+      "urlperfil": "../../../assets/perfil-sem-foto.jpg",
       "urlbackground": "../../../assets/cod.jpg",
       "id": 2,
       "contatos": [

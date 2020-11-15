@@ -1,3 +1,4 @@
+import { delay } from 'rxjs/operators';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -21,6 +22,7 @@ export class HomeComponent implements OnInit {
   feed: Feed[];
   formulario: FormGroup;
   jogos: Jogo[];
+  users: Usuario[];
 
   constructor(private route: ActivatedRoute,
               private userServicer: UsuariosService,
@@ -28,12 +30,14 @@ export class HomeComponent implements OnInit {
               private formBuilder: FormBuilder,
               private feedService: FeedService,
               private jogoService: JogosService,
+              private usersService: UsuariosService,
               private router: Router) { }
 
   ngOnInit(): void {
     this.getUser();
     this.getJogos();
     this.getFeed();
+    this.getUsers();
   }
 
   getUser(){
@@ -56,7 +60,7 @@ export class HomeComponent implements OnInit {
       nome: [this.usuario.nome],
       nickjogo: [null, [Validators.required]],
       mensagem: [null],
-      urlfotoperfil: [this.usuario.urlfoto],
+      urlfotoperfil: [this.usuario.urlperfil],
       urlfotojogo: [null]
     });
   }
@@ -73,6 +77,12 @@ export class HomeComponent implements OnInit {
       this.feed = [...data];
     })
   }
+
+  getUsers() {
+    this.usersService.getUsers().subscribe((users: Usuario[]) => {
+      this.users = users;
+    })
+  }
   
   publicar(){
     this.feedService.postFeed(this.formulario.value).subscribe((data: Feed) =>{
@@ -87,7 +97,7 @@ export class HomeComponent implements OnInit {
       nome: this.usuario.nome,
       nickjogo: null,
       mensagem: null,
-      urlfotoperfil: this.usuario.urlfoto,
+      urlfotoperfil: this.usuario.urlperfil,
       urlfotojogo: null
     });
   }
