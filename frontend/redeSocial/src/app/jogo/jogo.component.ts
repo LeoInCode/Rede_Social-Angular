@@ -9,6 +9,7 @@ import { Usuario } from './../model/Usuario';
 import { Feed } from './../model/Feed';
 import { FeedService } from './../shared/services/feed/feed.service';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
+import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-jogo',
@@ -25,6 +26,7 @@ export class JogoComponent implements OnInit {
   usuario: Usuario = new Usuario;
   contatos: Usuario[] = [];
   faCamera = faCamera;
+  faCaretSquareRight = faCaretSquareRight;
 
   constructor(private jogoService: JogosService,
               private route: ActivatedRoute,
