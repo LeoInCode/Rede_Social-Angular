@@ -74,8 +74,15 @@ export class HomeComponent implements OnInit {
 
   getFeed() {
     this.feedService.getFeed().subscribe((data: Feed[]) => {
-      data.reverse();
-      this.feed = [...data];
+      this.userContext.user.contatos.forEach((contato) => {
+        data.forEach((post) => {
+          if(contato === post.nick){
+            this.feed.push(post);
+          }
+        })
+      })
+      data.forEach((post) => this.userContext.user.nick === post.nick? this.feed.push(post) : null)
+      this.feed.sort().reverse();
     })
   }
 
