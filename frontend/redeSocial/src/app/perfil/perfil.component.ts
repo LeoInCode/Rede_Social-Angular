@@ -8,6 +8,8 @@ import { Usuario } from './../model/Usuario';
 import { JogosService } from './../shared/services/jogos/jogos.service';
 import { Jogo } from './../model/Jogo';
 import { UserContextService } from './../shared/services/usuarios/user-context.service';
+import { faCamera } from '@fortawesome/free-solid-svg-icons';
+import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-perfil',
@@ -23,6 +25,11 @@ export class PerfilComponent implements OnInit {
   mensagemAmizade: string = "Enviar Mensagem";
   mostrarBotaoAdicionar: boolean = false;
   mostrarBotaoMensagem: boolean = false;
+  faCamera = faCamera;
+  faCaretSquareRight = faCaretSquareRight;
+  cameraViewer: boolean = false;
+  inputViewer: boolean = false;
+  input: string;
 
 
   constructor(private feedService: FeedService,
@@ -40,17 +47,41 @@ export class PerfilComponent implements OnInit {
     this.route.data.subscribe(async (data: { user: Usuario }) => {
       this.usuario = await data.user;
       if(this.userContext.user){
-        if(this.usuario.id != this.userContext.user.id){
-          this.verificaAmizade();
-        }
+        this.usuario.id != this.userContext.user.id ? this.verificaAmizade() : this.mostrarCamera();
       }else{
-        this.mensagemAmizade = "Adicionar jogador";
-        this.mostrarBotaoAdicionar = true;
+        this.adicionarJogadorMensagem();
       }
       this.getFeed();
       this.getJogos();
       this.insereFundoCss();
     })
+  }
+
+  mostrarCamera() {
+    this.cameraViewer = true;
+    this.inputViewer = false;
+  }
+
+  inserirCampo() {
+    this.cameraViewer = false;
+    this.inputViewer = true;
+  }
+
+  adicionarJogadorMensagem() {
+    this.mensagemAmizade = "Adicionar jogador";
+    this.mostrarBotaoAdicionar = true;
+  }
+
+  adicionarMensagemAmizade() {
+    this.mensagemAmizade = "Enviar Mensagem";
+    this.mostrarBotaoMensagem = true;
+  }
+
+  trocarCapa() {
+    this.userContext.user.urlbackground = this.input;
+    this.userService.alteraCapa(this.userContext.user).subscribe((data: Usuario) => this.userContext.user = data);
+    this.cameraViewer = true;
+    this.inputViewer = false;
   }
 
   getUsers() {
@@ -61,13 +92,7 @@ export class PerfilComponent implements OnInit {
 
   verificaAmizade() {
     this.userService.verificaAmizade(this.userContext.user.nick,this.usuario.nick).subscribe(data => {
-      if(data[0]){
-        this.mensagemAmizade = "Enviar Mensagem";
-        this.mostrarBotaoMensagem = true;
-      }else{
-        this.mensagemAmizade = "Adicionar jogador";
-        this.mostrarBotaoAdicionar = true;
-      }
+      data[0] ? this.adicionarMensagemAmizade() : this.adicionarJogadorMensagem();
     });
   }
 
@@ -92,8 +117,7 @@ export class PerfilComponent implements OnInit {
     this.userService.adicionarContato(this.userContext.user).subscribe((data: Usuario) => {
       this.userContext.user = data;
       this.mostrarBotaoAdicionar = false;
-      this.mostrarBotaoMensagem = true;
-      this.mensagemAmizade = "Enviar Mensagem"
+      this.adicionarMensagemAmizade();
     })
   }
 }

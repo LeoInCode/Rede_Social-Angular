@@ -61,4 +61,8 @@ export class UsuariosService {
   adicionarContato(user: Usuario) {
     return this.http.put(this.URL +"/"+ user.id, user).pipe(take(1))
   }
+
+  alteraCapa(user: Usuario) {
+    return this.http.put(this.URL + "/" + user.id,user).pipe(take(1));
+  }
 }
