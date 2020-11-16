@@ -22,6 +22,7 @@ export class JogoComponent implements OnInit {
   feed: Feed[];
   users: Usuario[];
   usuario: Usuario = new Usuario;
+  contatos: Usuario[] = [];
 
   constructor(private jogoService: JogosService,
               private route: ActivatedRoute,
@@ -48,8 +49,9 @@ export class JogoComponent implements OnInit {
   }
 
   getUsers() {
-    this.usersService.getUsers().subscribe((users: Usuario[]) => {
-      this.users = users;
+    this.usersService.getUsers().subscribe(async (users: Usuario[]) => {
+      this.users = await users;
+      this.buscaAmigos();
     })
   }
 
@@ -61,6 +63,16 @@ export class JogoComponent implements OnInit {
     this.feedService.getFeedByNickJogo(this.jogo.nickjogo).subscribe((data: Feed[]) => {
       data.reverse();
       this.feed = [...data];
+    })
+  }
+  
+  buscaAmigos() {
+    this.userContext.user.contatos.forEach((contato) => {
+      this.users.forEach((user) => {
+        if (contato === user.nick){
+          this.contatos.push(user);
+        }
+      })
     })
   }
 }
