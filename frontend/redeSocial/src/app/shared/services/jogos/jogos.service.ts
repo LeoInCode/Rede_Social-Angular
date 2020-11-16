@@ -25,4 +25,7 @@ export class JogosService {
     );
   }
 
+  alteraCapa(jogo: Jogo) {
+    return this.http.put(this.URL + "/" + jogo.id,jogo).pipe(take(1));
+  }
 }

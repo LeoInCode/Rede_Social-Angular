@@ -1,4 +1,3 @@
-import { UsuariosService } from './../shared/services/usuarios/usuarios.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,6 +7,7 @@ import { UserContextService } from './../shared/services/usuarios/user-context.s
 import { Usuario } from './../model/Usuario';
 import { Feed } from './../model/Feed';
 import { FeedService } from './../shared/services/feed/feed.service';
+import { UsuariosService } from './../shared/services/usuarios/usuarios.service';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -23,10 +23,12 @@ export class JogoComponent implements OnInit {
   jogo: Jogo = new Jogo;
   feed: Feed[];
   users: Usuario[];
-  usuario: Usuario = new Usuario;
   contatos: Usuario[] = [];
   faCamera = faCamera;
   faCaretSquareRight = faCaretSquareRight;
+  cameraViewer: boolean = true;
+  inputViewer: boolean = false;
+  input: string;
 
   constructor(private jogoService: JogosService,
               private route: ActivatedRoute,
@@ -35,8 +37,6 @@ export class JogoComponent implements OnInit {
               private usersService: UsuariosService) { }
 
   ngOnInit(): void {
-    this.usuario = this.userContext.user;
-
     this.jogoService.getJogos().subscribe((data: Jogo[]) => {
       this.jogos = [...data];
     })
@@ -50,6 +50,18 @@ export class JogoComponent implements OnInit {
       this.insereCapaCss();
       this.getFeed();
     })
+  }
+
+  inserirCampo() {
+    this.cameraViewer = false;
+    this.inputViewer = true;
+  }
+
+  trocarCapa() {
+    this.jogo.urlcapa = this.input;
+    this.jogoService.alteraCapa(this.jogo).subscribe((data: Jogo) => this.jogo = data);
+    this.cameraViewer = true;
+    this.inputViewer = false;
   }
 
   getUsers() {

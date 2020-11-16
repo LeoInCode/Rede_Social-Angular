@@ -4,17 +4,17 @@
     <div class="container-fluid" id="background-image">
         <div class="row">
             <div class="col-lg-10 col-md-10 col-sm-10">
-                <div class="d-flex justify-content-end">
-                    <button class="btn btn-outline-dark border-0 mt-2 button-camera">
+                <div class="d-flex justify-content-end" *ngIf="cameraViewer">
+                    <button class="btn btn-outline-dark border-0 mt-2 button-camera" (click)="inserirCampo()" >
                         <fa-icon size="lg" [icon]="faCamera"></fa-icon>
                         Camera
                     </button>
                 </div>
-                <div class="d-flex justify-content-end">
+                <div class="d-flex justify-content-end" *ngIf="inputViewer" >
                     <div class="input-group col-lg-3 col-md-3 col-sm-4 col-4">
-                        <input type="text" class="form-control mt-2" placeholder="Insira o link da imagem">
+                        <input type="text" [(ngModel)]="input" class="form-control mt-2" placeholder="Insira o link da imagem">
                         <div class="input-group-append" id="button-addon4">
-                            <fa-icon size="lg" class="collor-icon" [icon]="faCaretSquareRight"></fa-icon>
+                            <fa-icon size="lg" class="collor-icon" [icon]="faCaretSquareRight" (click)="trocarCapa()" ></fa-icon>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                     <div class="container d-flex justify-content-center">
                         <div class="row mt-5 mb-5">
                             <div class="row mt-5" style="width:10rem;">
-                                <img src="{{ usuario.urlperfil }}" class="card-img-top rounded-circle" alt="Foto do usuário">
+                                <img src="{{ jogo.urlperfil }}" class="card-img-top rounded-circle" alt="Foto do usuário">
                             </div>
                         </div>
                     </div>
