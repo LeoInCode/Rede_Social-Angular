@@ -2,8 +2,11 @@
     <app-nav-bar [jogos]="jogos" [jogosList]="jogos" [usuarios]="users"></app-nav-bar>
     
     <div class="container-fluid" id="background-image">
-        <div class="d-flex justify-content-end mb-5 mr-5">
-            camera
+        <div class="d-flex justify-content-end mr-5 pr-5">
+            <button class="btn btn-outline-dark border-0 mt-2 button-camera">
+                <fa-icon size="lg" [icon]="faCamera"></fa-icon>
+                Camera
+            </button>
         </div>
         <div class="container d-flex justify-content-center">
             <div class="row mt-5 mb-5">

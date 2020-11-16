@@ -8,6 +8,7 @@ import { UserContextService } from './../shared/services/usuarios/user-context.s
 import { Usuario } from './../model/Usuario';
 import { Feed } from './../model/Feed';
 import { FeedService } from './../shared/services/feed/feed.service';
+import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-jogo',
@@ -23,6 +24,7 @@ export class JogoComponent implements OnInit {
   users: Usuario[];
   usuario: Usuario = new Usuario;
   contatos: Usuario[] = [];
+  faCamera = faCamera;
 
   constructor(private jogoService: JogosService,
               private route: ActivatedRoute,

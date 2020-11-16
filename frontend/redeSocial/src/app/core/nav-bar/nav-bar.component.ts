@@ -1,8 +1,8 @@
-import { Usuario } from './../../model/Usuario';
 import { Router } from '@angular/router';
 import { Component, OnInit, ChangeDetectionStrategy, Input, ChangeDetectorRef } from '@angular/core';
 
 import { Jogo } from './../../model/Jogo';
+import { Usuario } from './../../model/Usuario';
 import { faGripLinesVertical } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
