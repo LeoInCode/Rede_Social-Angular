@@ -49,6 +49,16 @@ export class UsuariosService {
     );
   }
 
+  verificarNick(nick: string) {
+    return this.http.get(this.URL)
+    .pipe(
+      delay(4000),
+      map((usuario: Usuario[]) => usuario.filter(v => v.nick === nick)),
+      map((usuario: Usuario[]) => usuario.length > 0),
+      take(1)
+    );
+  }
+
   verificaAmizade(nickPerfil: string, nickJogador: string) {
     return this.http.get(this.URL)
     .pipe(

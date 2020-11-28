@@ -24,7 +24,7 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
-      nick: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(35)]],
+      nick: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(35)], [this.validarNick.bind(this)]],
       nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(35)]],
       email: [null, [Validators.required, Validators.email, Validators.maxLength(40)], [this.validarEmail.bind(this)]],
       senha: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(12)]],
@@ -41,6 +41,13 @@ export class CadastroComponent implements OnInit {
   validarEmail(formControl: FormControl) {
     return this.userService.verificarEmail(formControl.value)
       .pipe(map(emailExiste => emailExiste ? { emailInvalido: true } : null),
+      catchError(err => this.mensagem = "Verifique sua conexão e tente novamente mais tarde")
+      );
+  }
+
+  validarNick(formControl: FormControl) {
+    return this.userService.verificarNick(formControl.value)
+      .pipe(map(nickExiste => nickExiste ? { nickInvalido: true } : null),
       catchError(err => this.mensagem = "Verifique sua conexão e tente novamente mais tarde")
       );
   }
