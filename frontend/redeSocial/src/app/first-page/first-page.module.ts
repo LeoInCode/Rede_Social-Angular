@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { FirstPageComponent } from './first-page.component';
 import { LoginComponent } from './login/login.component';
+import { FirstPageRoutingModule } from './first-page-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LoginComponent } from './login/login.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FirstPageRoutingModule
   ]
 })
 export class FirstPageModule { }

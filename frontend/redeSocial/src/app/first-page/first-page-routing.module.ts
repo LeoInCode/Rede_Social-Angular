@@ -14,4 +14,4 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: [],
 })
-export class ChallengeListRoutinModule {}
+export class FirstPageRoutingModule {}

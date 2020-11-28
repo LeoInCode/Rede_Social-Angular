@@ -1,11 +1,10 @@
-import { UsuarioResolver } from './shared/services/usuarios/usuario.resolver';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { FirstPageModule } from './first-page/first-page.module';
+import { UsuarioResolver } from './shared/services/usuarios/usuario.resolver';
 import { JogoModule } from './jogo/jogo.module';
 import { HomeModule } from './home/home.module';
 import { CoreModule } from './core/core.module';
@@ -27,7 +26,6 @@ import { JogoComponent } from './jogo/jogo.component';
     FormsModule,
     ReactiveFormsModule,
     CoreModule,
-    FirstPageModule,
     HomeModule,
     JogoModule,
     HttpClientModule,
