@@ -2,27 +2,27 @@
   "usuarios": [
     {
       "id": 1,
-      "nick": "LeoM553",
+      "nick": "leo",
       "nome": "Leonardo",
       "email": "leo@leo.com",
       "senha": "1234567",
-      "urlperfil": "../../../assets/Foto.jpg",
+      "urlperfil": "../../../assets/perfil-sem-foto.jpg",
       "urlbackground": "../../../assets/lords-perfil.jpg",
       "contatos": [
         "Eduardo"
       ]
     },
     {
-      "nick": "leo",
+      "nick": "LeoM553",
       "nome": "Leonardo Souza Mendes",
       "email": "leo-mendes-souza@hotmail.com",
       "senha": "12345678",
-      "urlperfil": "../../../assets/perfil-sem-foto.jpg",
+      "urlperfil": "../../../assets/Foto.jpg",
       "urlbackground": "../../../assets/cod.jpg",
       "id": 2,
       "contatos": [
         "Luluzinha",
-        "LeoM553"
+        "leo"
       ]
     },
     {
@@ -69,28 +69,28 @@
   "feed": [
     {
       "id": 1,
-      "nick": "LeoM553",
+      "nick": "leo",
       "nome": "Leonardo",
       "mensagem": "Qualquer coisa",
-      "urlfotoperfil": "../../../assets/Foto.jpg",
+      "urlfotoperfil": "../../../assets/perfil-sem-foto.jpg",
       "urlfotojogo": "../../../assets/Foto.jpg",
       "nickjogo": "Call of Duty"
     },
     {
-      "nick": "leo",
+      "nick": "LeoM553",
       "nome": "Leonardo Souza Mendes",
-      "nickjogo": "Call of Duty",
+      "nickjogo": "League of Legends",
       "mensagem": "Mensagem 2",
-      "urlfotoperfil": "../../../assets/perfil-sem-foto.jpg",
+      "urlfotoperfil": "../../../assets/Foto.jpg",
       "urlfotojogo": "../../../assets/cod.jpg",
       "id": 2
     },
     {
-      "nick": "leo",
+      "nick": "LeoM553",
       "nome": "Leonardo Souza Mendes",
       "nickjogo": "Call of Duty",
       "mensagem": "Mensagem",
-      "urlfotoperfil": "../../../assets/perfil-sem-foto.jpg",
+      "urlfotoperfil": "../../../assets/Foto.jpg",
       "urlfotojogo": "../../../assets/Foto.jpg",
       "id": 3
     }
