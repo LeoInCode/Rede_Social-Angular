@@ -73,7 +73,7 @@
       "nome": "Leonardo",
       "mensagem": "Qualquer coisa",
       "urlfotoperfil": "../../../assets/perfil-sem-foto.jpg",
-      "urlfotojogo": "../../../assets/Foto.jpg",
+      "urlfotojogo": "../../../assets/cod.jpg",
       "nickjogo": "Call of Duty"
     },
     {
@@ -82,17 +82,26 @@
       "nickjogo": "League of Legends",
       "mensagem": "Mensagem 2",
       "urlfotoperfil": "../../../assets/Foto.jpg",
-      "urlfotojogo": "../../../assets/cod.jpg",
+      "urlfotojogo": "../../../assets/foto-league-of-legends.jpg",
       "id": 2
     },
     {
       "nick": "LeoM553",
       "nome": "Leonardo Souza Mendes",
-      "nickjogo": "Call of Duty",
+      "nickjogo": "Genshin Impact",
       "mensagem": "Mensagem",
       "urlfotoperfil": "../../../assets/Foto.jpg",
-      "urlfotojogo": "../../../assets/Foto.jpg",
+      "urlfotojogo": "../../../assets/foto-Genshin-Impact-2.jpg",
       "id": 3
+    },
+    {
+      "nick": "LeoM553",
+      "nome": "Leonardo Souza Mendes",
+      "nickjogo": "Lords of the Fallen",
+      "mensagem": "Essa publicação vai para o mundo!",
+      "urlfotoperfil": "../../../assets/Foto.jpg",
+      "urlfotojogo": "../../../assets/foto-lords.jpg",
+      "id": 4
     }
   ]
 }
