@@ -12,7 +12,7 @@ O objetivo principal foi desenvolver uma plataforma com base em Angular para adq
 ---
 
 ### Demonstração
-Para visualizar uma demonstração do código, fiz um gif e subi para seguinte link: https://imgur.com/a/J8W4dqM. Ele tem a duração de 58 segundos, mas permite ver bem todas as interfaces, e também, algumas funcionalidades. Espero que aproveitem! :tw-1f600:
+Para visualizar uma demonstração do código, fiz um gif e subi para seguinte link: https://imgur.com/a/J8W4dqM. Ele tem a duração de 58 segundos, mas permite ver bem todas as interfaces, e também, algumas funcionalidades. Espero que aproveitem!
 
 ---
 
