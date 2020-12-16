@@ -7,7 +7,7 @@ Claro, embora tenha sido desenvolvido ao longo de três meses, não foi dedicado
 ---
 
 ### Objetivo
-O objetivo foi criar uma rede social para jogadores de games eletrônicos. Os usuários poderiam fazer publicações para determinados jogos, e teriam seu clico de amigos. Assim, poderiam desfrutar de uma rede social feita inteiramente para jogadores, podendo interagir com imagens, frases com pessoas daquele jogo em específico, sem se preocupar se os demais iriam entender.
+O objetivo principal foi desenvolver uma plataforma com base em Angular para adquirir novos conhecimentos, testar funcionalidades, e aprender um pouco mais com meus erros. Com isso, a ideia foi criar uma rede social para jogadores de games eletrônicos. Os usuários poderiam fazer publicações para determinados jogos, e teriam seu clico de amigos. Assim, poderiam desfrutar de uma rede social feita inteiramente para jogadores, podendo interagir com imagens, frases com pessoas daquele jogo em específico, sem se preocupar se os demais iriam entender.
 
 ---
 
